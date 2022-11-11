@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Recipe from "./content";
+import * as ReactBootstrap from "react-bootstrap";
 
 const Api = () => {
   const options = {
@@ -12,6 +13,7 @@ const Api = () => {
 
   const [recipeData, setRecipeData] = useState([]);
   const [Recipes, setRecipes] = useState("");
+  const [Loading, setLoading] = useState(false);
 
   const recipe = recipeData.map((recipe) => {
     return(
@@ -38,12 +40,14 @@ const Api = () => {
     //console.log(carryErr);
     console.log(data);
     setRecipeData(data);
+    setLoading(true); 
   };
 
 
   return (
     <div className="max-w-full max-h-full">
         {recipe}
+        {Loading ? recipeData : <ReactBootstrap.Spinner animation="border"/>}
     </div>
   );
  
