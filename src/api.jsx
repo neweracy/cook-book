@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Recipe from "./content";
+import './api.css'
 import * as ReactBootstrap from "react-bootstrap";
 
 const Api = () => {
@@ -19,7 +20,7 @@ const Api = () => {
     return(
         <div className="max-w-full max-h-full text-center">
             <a href={recipe.url} className="max-w-full max-h-full" target="_blank" >
-                <h1 className="max-w-full">{recipe.title}</h1>
+                <h1 className="max-w-full m-1">{recipe.title}</h1>
             </a>
         </div>
     )
@@ -45,9 +46,9 @@ const Api = () => {
 
 
   return (
-    <div className="max-w-full max-h-full">
-        {recipe}
-        {Loading ? recipeData : <ReactBootstrap.Spinner animation="border"/>}
+    <div className="App text-center max-w-full max-h-full mt-2 justify-center">
+        
+        {Loading ? recipe : <ReactBootstrap.Spinner animation="border" />}
     </div>
   );
  
