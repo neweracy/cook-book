@@ -1,56 +1,66 @@
-import React, { useEffect, useState } from "react";
+import * as react from "react";
 import Recipe from "./content";
-import './api.css'
+import "./api.css";
+import data from "./data.json";
 import * as ReactBootstrap from "react-bootstrap";
 
 const Api = () => {
-  const options = {
-    method: "GET",
-    headers: {
-      "X-RapidAPI-Key": "b0f3025c92msh0669d79c4a196dap1e9fb9jsn7ecef3b561bd",
-      "X-RapidAPI-Host": "cooking-recipe2.p.rapidapi.com",
-    },
+  const [Loading, setLoading] = react.useState(false);
+
+  react.useEffect(() => {
+    recipeList();
+  }, [1]);
+
+  //search bar
+  const searchBar  = () => {
+    return <div className=" max-h-full max-w-full flex justify-center mt-3">
+      <h1>searchBar</h1>
+    </div>;
   };
 
-  const [recipeData, setRecipeData] = useState([]);
-  const [Recipes, setRecipes] = useState("");
-  const [Loading, setLoading] = useState(false);
+  //hero section
+  const heroSection = () => {
+    return <div className="max-h">hero secton</div>;
+  };
 
-  const recipe = recipeData.map((recipe) => {
-    return(
-        <div className="max-w-full max-h-full text-center">
-            <a href={recipe.url} className="max-w-full max-h-full" target="_blank" >
-                <h1 className="max-w-full m-1">{recipe.title}</h1>
-            </a>
+  //recipelist
+  const recipeList = async () => {
+    setLoading(true);
+    const reData =
+      (await data) &&
+      data.map((data) => (
+        <div className="">
+          <h1>g</h1>
         </div>
-    )
-
-  });
-
-  useEffect(() => {
-    getData();
-  }, [Recipes]);
-
-  const getData = async () => {
-    const response = await fetch(
-      "https://cooking-recipe2.p.rapidapi.com/",
-      options
-    );
-    const data = await response.json();
-    //const carryErr = data.catch((error) => console.error(error));
-    //console.log(carryErr);
-    console.log(data);
-    setRecipeData(data);
-    setLoading(true); 
+      ));
+    console.log(reData);
   };
-
 
   return (
-    <div className="App text-center max-w-full max-h-full mt-2 justify-center">
-        
-        {Loading ? recipe : <ReactBootstrap.Spinner animation="border" />}
+    <div className="max-w-full max-h-full">
+      <section id="searchBar">
+      {searchBar()}
+      </section>
+      <section id="heroSection">
+        {heroSection()}
+      </section>
+      <section id="recipeList">
+        <div className="App text-center max-w-full max-h-full mt-2 justify-center">
+          {Loading ? (
+            data &&
+            data.map((data) => (
+              <div className="">
+                <a href={data.url} target="_blank" rel="noopener noreferrer">
+                  <h1>{data.title}</h1>
+                </a>
+              </div>
+            ))
+          ) : (
+            <ReactBootstrap.Spinner animation="border" />
+          )}
+        </div>
+      </section>
     </div>
   );
- 
 };
 export default Api;
