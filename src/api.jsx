@@ -28,12 +28,12 @@ const Api = () => {
 
   return (
     <div className="max-w-full max-h-full">
-      <section id="searchBar">
+      <section id="searchBar"className="sticky top-0">
         
             <SearchBar fullData={data}/>
           
       </section>
-      <section id="heroSection"><HeroSection img={picture}/></section>
+      <section id="heroSection" className=""><HeroSection img={picture}/></section>
       <section id="recipeList">
         <div className="App text-center cursor-pointer max-w-full max-h-full mt-2 justify-center">
           {Loading ? (

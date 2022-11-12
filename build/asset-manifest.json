@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0f9002b5.css",
+    "main.js": "/static/js/main.dbdf4c85.js",
+    "static/js/787.7613f31d.chunk.js": "/static/js/787.7613f31d.chunk.js",
+    "static/media/wasa-crispbread-0P-cY9tUNnY-unsplash.jpg": "/static/media/wasa-crispbread-0P-cY9tUNnY-unsplash.bf5dd197d2d2f6e8e8d9.jpg",
+    "index.html": "/index.html",
+    "main.0f9002b5.css.map": "/static/css/main.0f9002b5.css.map",
+    "main.dbdf4c85.js.map": "/static/js/main.dbdf4c85.js.map",
+    "787.7613f31d.chunk.js.map": "/static/js/787.7613f31d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0f9002b5.css",
+    "static/js/main.dbdf4c85.js"
+  ]
+}
