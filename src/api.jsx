@@ -11,9 +11,9 @@ const Api = () => {
   const [modal, setModal] = react.useState(false);
   const [SearchRecipe, setSearchRecipe] = react.useState("");
 
-  const toggleModal = () => {
-    setModal(!modal);
-  };
+
+  const dataSort = data.sort((a,b) => a.title.localeCompare(b.title));
+
 
   react.useEffect(() => {
     rList();
@@ -22,7 +22,7 @@ const Api = () => {
   const rList = async () => {
     setLoading(true);
     const reData =
-      (await data) &&
+      (await dataSort) &&
       data.map((data) => (
         <div className="">
           <h1>g</h1>
@@ -30,9 +30,13 @@ const Api = () => {
       ));
     console.log(reData);
   };
+  
+
+  //sort data
+  
 
   //SearchRecipe function
-  const filterRecipe = data.filter((data) => {
+  const filterRecipe = dataSort.filter((data) => {
     return SearchRecipe !== ""
       ? data.title.toLowerCase().includes(SearchRecipe.toLowerCase())
       : data;
@@ -44,7 +48,7 @@ const Api = () => {
       filterRecipe &&
       filterRecipe.map((data, keyInfo) => (
         <div key={keyInfo} className="">
-          <a href={data.url} target="_blank" rel="noopener noreferrer">
+          <a className="  " href={data.url} target="_blank" rel="noopener noreferrer">
             <h1>{data.title}</h1>
             <div className="flex justify-center ">
               <img src={data.img} alt="" />
@@ -57,9 +61,10 @@ const Api = () => {
     return list;
   };
 
-  const toggled = filterRecipe.map((data) => {
-    return data.url;
-  });
+  
+
+  
+
 
   return (
     <div className="max-w-full max-h-full">
