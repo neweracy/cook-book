@@ -1,18 +1,19 @@
 //search bar
-const SearchBar = ({ title, source, fullData }) => {
+const SearchBar = ({ fullData }) => {
   return (
     <div className="">
-      <div class="relative max-w-full w-full  bg-white px-6 pt-10 pb-8 shadow-xl ring-1 ring-gray-900/5 sm:px-8 ">
+      <div class="relative max-w-full w-full  bg-yellow-50 px-6 pt-10 pb-8 shadow-md ring-1 ring-gray-900/5 sm:px-8 ">
         <div class="mx-auto max-w-md">
           <form action="" class="relative mx-auto w-max">
             <input
               type="search"
               placeholder="Search Recipes"
-              class="peer relative z-10 h-12 w-12 cursor-pointer rounded-full border bg-transparent pl-12 outline-none focus:w-full focus:cursor-text focus:border-lime-300 focus:pl-16 focus:pr-4"
+              onChange={(e) => fullData(e.target.value)}
+              class="peer relative z-10 h-12 w-12 cursor-pointer rounded-full border bg-transparent pl-12 outline-none focus:w-full focus:cursor-text focus:border-orange-300 focus:pl-16 focus:pr-4"
             />
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              class="absolute inset-y-0 my-auto h-8 w-12 border-r border-transparent stroke-gray-500 px-3.5 peer-focus:border-lime-300 peer-focus:stroke-lime-500"
+              class="absolute inset-y-0 my-auto h-8 w-12 border-r border-transparent stroke-black px-3.5 peer-focus:border-orange-300 peer-focus:stroke-orange-500"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
