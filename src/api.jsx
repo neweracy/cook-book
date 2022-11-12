@@ -1,8 +1,10 @@
 import * as react from "react";
-import Recipe from "./content";
+import picture from "./wasa-crispbread-0P-cY9tUNnY-unsplash.jpg";
 import "./api.css";
 import data from "./data.json";
+import SearchBar from "./seacrchBar";
 import * as ReactBootstrap from "react-bootstrap";
+import HeroSection from "./heroSection";
 
 const Api = () => {
   const [Loading, setLoading] = react.useState(false);
@@ -10,19 +12,7 @@ const Api = () => {
   react.useEffect(() => {
     recipeList();
   }, [1]);
-
-  //search bar
-  const searchBar  = () => {
-    return <div className=" max-h-full max-w-full flex justify-center mt-3">
-      <h1>searchBar</h1>
-    </div>;
-  };
-
-  //hero section
-  const heroSection = () => {
-    return <div className="max-h">hero secton</div>;
-  };
-
+  
   //recipelist
   const recipeList = async () => {
     setLoading(true);
@@ -39,19 +29,22 @@ const Api = () => {
   return (
     <div className="max-w-full max-h-full">
       <section id="searchBar">
-      {searchBar()}
+        
+            <SearchBar fullData={data}/>
+          
       </section>
-      <section id="heroSection">
-        {heroSection()}
-      </section>
+      <section id="heroSection"><HeroSection img={picture}/></section>
       <section id="recipeList">
-        <div className="App text-center max-w-full max-h-full mt-2 justify-center">
+        <div className="App text-center cursor-pointer max-w-full max-h-full mt-2 justify-center">
           {Loading ? (
             data &&
             data.map((data) => (
               <div className="">
                 <a href={data.url} target="_blank" rel="noopener noreferrer">
                   <h1>{data.title}</h1>
+                  <div className="flex justify-center ">
+                    <img src={data.img} alt="" />
+                  </div>
                 </a>
               </div>
             ))
