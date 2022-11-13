@@ -1,7 +1,7 @@
 //search bar
 const SearchBar = ({ fullData }) => {
   return (
-    <div className="">
+    <div className=" ">
       <div class="relative max-w-full w-full  bg-yellow-50 px-6 pt-10 pb-8 shadow-md ring-1 ring-gray-900/5 sm:px-8 ">
         <div class="mx-auto max-w-md">
           <form action="" class="relative mx-auto w-max">

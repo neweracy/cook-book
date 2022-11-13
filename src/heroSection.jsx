@@ -11,7 +11,7 @@ const HeroSection = ({img}) => {
             <p className="text-4xl font-bold md:text-7xl">recipe list</p>
             <p className="mt-2 text-sm md:text-lg">neweracy</p>
             <a href="#recipeList">
-              <button className="text-lg md:text-2xl bg-black text-white py-2 px-5 mt-10 hover:bg-amber-800">
+              <button className="text-lg md:text-2xl rounded bg-gray-600 hover:bg-slate-600 text-white py-2 px-5 mt-10 ">
                 Recipes
               </button>
             </a>
