@@ -60,9 +60,9 @@ const Api = () => {
                   </h1>
                   <p className="leading-relaxed mb-3">{data.title}</p>
                   <div class="flex items-center flex-wrap ">
-                    <a class="text-orange-600 inline-flex items-center md:mb-2 lg:mb-0">
+                    <span className="text-orange-600 inline-flex items-center md:mb-2 lg:mb-0">
                       Read More
-                    </a>
+                    </span>
 
                     <span class="text-gray-400 inline-flex items-center leading-none text-sm">
                       <svg
