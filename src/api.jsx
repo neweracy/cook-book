@@ -8,11 +8,10 @@ import HeroSection from "./heroSection";
 
 const Api = () => {
   const [Loading, setLoading] = react.useState(false);
-  const [modal, setModal] = react.useState(false);
   const [SearchRecipe, setSearchRecipe] = react.useState("");
 
 
-  const dataSort = data.sort((a,b) => a.title.localeCompare(b.title));
+  const dataSort = data.sort((a, b) => a.title.localeCompare(b.title));
 
 
   react.useEffect(() => {
@@ -30,10 +29,10 @@ const Api = () => {
       ));
     console.log(reData);
   };
-  
+
 
   //sort data
-  
+
 
   //SearchRecipe function
   const filterRecipe = dataSort.filter((data) => {
@@ -49,10 +48,11 @@ const Api = () => {
       filterRecipe.map((data, keyInfo) => (
         <div key={keyInfo} className="">
           <a className="  " href={data.url} target="_blank" rel="noopener noreferrer">
-            <h1>{data.title}</h1>
+
             <div className="flex justify-center ">
               <img src={data.img} alt="" />
             </div>
+            <h1>{data.title}</h1>
           </a>
         </div>
       ));
@@ -61,9 +61,9 @@ const Api = () => {
     return list;
   };
 
-  
 
-  
+
+
 
 
   return (
@@ -75,7 +75,7 @@ const Api = () => {
         <HeroSection img={picture} />
       </section>
       <section id="recipeList">
-        <div className="App text-center cursor-pointer max-w-full max-h-full mt-2 justify-center">
+        <div className="App grid grid-cols-3  text-center cursor-pointer max-w-full max-h-full py-32 justify-center">
           {Loading ? (
             recipeList()
           ) : (
