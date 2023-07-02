@@ -43,7 +43,12 @@ const Api = () => {
       filterRecipe &&
       filterRecipe.map((data, keyInfo) => (
         <div key={keyInfo} className="">
-          <a className="" href={data.url} target="_blank" rel="noopener noreferrer">
+          <a
+            className=""
+            href={data.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <div className=" p-4 sm:w-full md:w-full  ">
               <div className="h-full border-2 bg-amber-200 hover:bg-yellow-50 shadow-sm hover:text-gray-500 transition duration-300 ease-in border-amber-200 border-opacity-60 rounded-lg overflow-hidden">
                 <img
@@ -96,7 +101,7 @@ const Api = () => {
         <HeroSection img={picture} />
       </section>
       <section id="recipeList" className="bg-yellow-100">
-        <div className=" grid lg:grid-cols-3 md:grid-cols-2 gap-5  text-center cursor-pointer max-w-full max-h-full py-32  ">
+        <div className=" items-center grid lg:grid-cols-3 md:grid-cols-2 gap-5  text-center cursor-pointer max-w-full max-h-full py-32  ">
           {Loading ? (
             recipeList()
           ) : (
